@@ -1,11 +1,11 @@
-About r-candisc
-===============
+About r-candisc-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-candisc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://CRAN.R-project.org/package=candisc
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-candisc-feedstock/blob/main/LICENSE.txt)
 
 Summary: Functions for computing and visualizing generalized canonical discriminant analyses and canonical correlation analysis for a multivariate linear model. Traditional canonical discriminant analysis is restricted to a one-way 'MANOVA' design and is equivalent to canonical correlation analysis between a set of quantitative response variables and a set of dummy variables coded from the factor variable. The 'candisc' package generalizes this to higher-way 'MANOVA' designs for all factors in a multivariate linear model, computing canonical scores and vectors for each term. The graphic functions provide low-rank (1D, 2D, 3D) visualizations of terms in an 'mlm' via the 'plot.candisc' and 'heplot.candisc' methods. Related plots are now provided for canonical correlation analysis when all predictors are quantitative.
 
