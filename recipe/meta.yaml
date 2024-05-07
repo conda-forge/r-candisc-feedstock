@@ -1,4 +1,4 @@
-{% set version = "0.8-6" %}
+{% set version = "0.9.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/candisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/candisc/candisc_{{ version }}.tar.gz
-  sha256: 9645a3c0f8a0f7ee1e0c4de6cac4d3432177e6d3975fa538cdb060f5e480709d
+  sha256: a488a51a2931c18d4541a67539892646b67d9d4d286995660e0d2c087a858572
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
 
   rpaths:
