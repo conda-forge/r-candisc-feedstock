@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,30 +9,37 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/candisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/candisc/candisc_{{ version }}.tar.gz
-  sha256: a488a51a2931c18d4541a67539892646b67d9d4d286995660e0d2c087a858572
+  sha256: 7d3d81bbc78e13d69a4ceadcd747cd881e0efcd627a46c0b15c9267636a5a6e7
 
 build:
-  number: 2
+  number: 0
   noarch: generic
-
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ posix }}zip               # [win]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
-
   host:
     - r-base
     - r-car
+    - r-dplyr
+    - r-ggplot2
     - r-heplots >=0.8_6
-
+    - r-insight
   run:
     - r-base
     - r-car
+    - r-dplyr
+    - r-ggplot2
     - r-heplots >=0.8_6
+    - r-insight
 
 test:
   commands:
@@ -45,7 +52,6 @@ about:
   summary: Functions for computing and visualizing generalized canonical discriminant analyses and canonical correlation analysis for a multivariate linear model. Traditional canonical discriminant analysis is restricted to a one-way 'MANOVA' design and is equivalent to canonical correlation analysis between a set of quantitative
     response variables and a set of dummy variables coded from the factor variable. The 'candisc' package generalizes this to higher-way 'MANOVA' designs for all factors in a multivariate linear model, computing canonical scores and vectors for each term. The graphic functions provide low-rank (1D, 2D, 3D) visualizations
     of terms in an 'mlm' via the 'plot.candisc' and 'heplot.candisc' methods. Related plots are now provided for canonical correlation analysis when all predictors are quantitative.
-
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
