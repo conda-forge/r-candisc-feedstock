@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/candisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/candisc/candisc_{{ version }}.tar.gz
-  sha256: 7d3d81bbc78e13d69a4ceadcd747cd881e0efcd627a46c0b15c9267636a5a6e7
+  sha256: 75857923e65b265029aa544e26933b5feae14df0911a94c2cfd6bfed1b94d656
 
 build:
   number: 0
