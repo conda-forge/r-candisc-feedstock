@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/candisc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/candisc/candisc_{{ version }}.tar.gz
-  sha256: 75857923e65b265029aa544e26933b5feae14df0911a94c2cfd6bfed1b94d656
+  sha256: 08de55c084e570fd8db665476f048f914866f8f27714f1bc3a33aacd6b998e0b
 
 build:
   number: 0
@@ -49,9 +49,9 @@ test:
 about:
   home: https://CRAN.R-project.org/package=candisc
   license: GPL-2.0-or-later
-  summary: Functions for computing and visualizing generalized canonical discriminant analyses and canonical correlation analysis for a multivariate linear model. Traditional canonical discriminant analysis is restricted to a one-way 'MANOVA' design and is equivalent to canonical correlation analysis between a set of quantitative
-    response variables and a set of dummy variables coded from the factor variable. The 'candisc' package generalizes this to higher-way 'MANOVA' designs for all factors in a multivariate linear model, computing canonical scores and vectors for each term. The graphic functions provide low-rank (1D, 2D, 3D) visualizations
-    of terms in an 'mlm' via the 'plot.candisc' and 'heplot.candisc' methods. Related plots are now provided for canonical correlation analysis when all predictors are quantitative.
+  summary: Functions for computing and visualizing generalized canonical discriminant analyses and canonical correlation analysis for a multivariate linear model. Traditional canonical discriminant analysis is restricted to a one-way 'MANOVA' design and is equivalent to canonical correlation analysis between a set of 
+    quantitative response variables and a set of dummy variables coded from the factor variable. The 'candisc' package generalizes this to higher-way 'MANOVA' designs for all factors in a multivariate linear model, computing canonical scores and vectors for each term. The graphic functions provide low-rank (1D, 2D, 3D)
+    visualizations of terms in an 'mlm' via the 'plot.candisc' and 'heplot.candisc' methods. Related plots are now provided for canonical correlation analysis when all predictors are quantitative.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
